@@ -25,12 +25,12 @@ qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
 sudo apt install kde-plasma-desktop
 sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
-flatpak install flathub com.brave.Browser
-flatpak install flathub com.spotify.Client
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub com.github.iwalton3.jellyfin-media-player
-flatpak install flathub com.nordpass.NordPass
-flatpak install flathub com.github.debauchee.barrier
+flatpak -y install flathub com.brave.Browser
+flatpak -y install flathub com.spotify.Client
+flatpak -y install flathub com.discordapp.Discord
+flatpak -y install flathub com.github.iwalton3.jellyfin-media-player
+flatpak -y install flathub com.nordpass.NordPass
+flatpak -y install flathub com.github.debauchee.barrier
 cd ~$USER/
 mkdir backlock
 cd backlock
