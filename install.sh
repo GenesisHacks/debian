@@ -3,8 +3,6 @@
 USER="$1"
 BACKGROUND="$2"
 LOCKSCREEN="$3"
-#BACKGROUND="https://filebin.net/kndcvsje2oss6kqu/05-upscaled-scale-2_00x__1_.png"
-#LOCKSCREEN="https://filebin.net/kndcvsje2oss6kqu/turtle.png"
 
 function setBackground(
 qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
@@ -22,8 +20,8 @@ qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
 )
 
 
-sudo apt install kde-plasma-desktop
-sudo apt install flatpak
+apt-get -y install kde-plasma-desktop
+apt-get -y install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub com.spotify.Client
