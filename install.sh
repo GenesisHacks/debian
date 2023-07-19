@@ -30,11 +30,11 @@ flatpak install -y flathub com.github.iwalton3.jellyfin-media-player
 flatpak install -y flathub com.nordpass.NordPass
 flatpak install -y flathub org.remmina.Remmina
 flatpak install -y flathub com.github.debauchee.barrier
-cd ~$USER/
+cd /home/$USER/
 mkdir backlock
 cd backlock
 wget $LOCKSCREEN
 wget $BACKGROUND
-setBackground
+#setBackground
 usermod -aG sudo $USER
 shutdown -r 0
