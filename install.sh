@@ -1,25 +1,18 @@
 #!/usr/bin/env bash
 
-USER="$1"
-BACKGROUND="$2"
-LOCKSCREEN="$3"
+OPTION="$1"
+USER="$2"
+#BACKGROUND="$3"
+#LOCKSCREEN="$4"
+BACKGROUND="https://filebin.net/kndcvsje2oss6kqu/05-upscaled-scale-2_00x__1_.png"
+LOCKSCREEN="https://filebin.net/kndcvsje2oss6kqu/turtle.png"
 
-function setBackground(
-qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
-    var allDesktops = desktops();
-    print (allDesktops);
-    for (i=0;i<allDesktops.length;i++) {{
-        d = allDesktops[i];
-        d.wallpaperPlugin = "org.kde.image";
-        d.currentConfigGroup = Array("Wallpaper",
-                                     "org.kde.image",
-                                     "General");
-        d.writeConfig("Image", "file:///home/'"$USER"'/backlock/$(basename "$BACKGROUND")")
-    }}
-'
-)
+if [$OPTION = "-h"]
+echo "Usage: ./install -r username backgroundURL lockscreenURL"
+exit 0
+fi
 
-
+if [$OPTION = "-r"]
 apt-get -y install kde-plasma-desktop
 apt-get -y install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
@@ -35,6 +28,9 @@ mkdir backlock
 cd backlock
 wget $LOCKSCREEN
 wget $BACKGROUND
+cd /home/$USER/
+wget "https://raw.githubusercontent.com/GenesisHacks/debian/main/bg.sh"
 #setBackground
 usermod -aG sudo $USER
 shutdown -r 0
+fi
