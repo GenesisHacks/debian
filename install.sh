@@ -21,8 +21,6 @@ flatpak install -y flathub com.spotify.Client
 flatpak install -y flathub com.discordapp.Discord
 flatpak install -y flathub com.github.iwalton3.jellyfin-media-player
 flatpak install -y flathub com.nordpass.NordPass
-flatpak install -y flathub org.remmina.Remmina
-flatpak install -y flathub com.github.debauchee.barrier
 cd /home/$USER/
 mkdir backlock
 cd backlock
